@@ -1,0 +1,261 @@
+/* Details Hero Section */
+.details-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.details-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.details-hero .lead {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Model Details Section */
+.model-details {
+    padding: 80px 0;
+    background: var(--background-color);
+}
+
+.model-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-5px);
+}
+
+.model-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.model-header i {
+    font-size: 2rem;
+}
+
+.model-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.model-content {
+    padding: 2rem;
+}
+
+.specs-item {
+    margin-bottom: 2rem;
+}
+
+.specs-item:last-child {
+    margin-bottom: 0;
+}
+
+.specs-item h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.specs-item p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.metric {
+    text-align: center;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.metric:hover {
+    transform: translateY(-3px);
+}
+
+.metric-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* System Architecture Section */
+.system-architecture {
+    padding: 80px 0;
+    background: white;
+}
+
+.architecture-diagram {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.arch-layer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.arch-layer:hover {
+    transform: translateX(10px);
+}
+
+.arch-layer::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -2rem;
+    width: 2px;
+    height: 2rem;
+    background: var(--primary-color);
+    display: none;
+}
+
+.arch-layer:not(:last-child)::before {
+    display: block;
+}
+
+.layer-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.layer-content h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.layer-content p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Performance Metrics Section */
+.performance-metrics {
+    padding: 80px 0;
+    background: var(--background-color);
+}
+
+.performance-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.performance-card h3 {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+/* Dark Theme Support */
+body.dark-theme .model-card,
+body.dark-theme .arch-layer,
+body.dark-theme .performance-card {
+    background: var(--primary-dark);
+    color: white;
+}
+
+body.dark-theme .specs-item h3,
+body.dark-theme .layer-content h3,
+body.dark-theme .performance-card h3 {
+    color: white;
+}
+
+body.dark-theme .specs-item p,
+body.dark-theme .layer-content p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-theme .metric {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .metric-value {
+    color: var(--secondary-color);
+}
+
+body.dark-theme .metric-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .details-hero .lead {
+        font-size: 1.25rem;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-layer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .arch-layer:hover {
+        transform: translateX(0) translateY(-5px);
+    }
+} 
